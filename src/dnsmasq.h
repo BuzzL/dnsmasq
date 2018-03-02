@@ -15,6 +15,7 @@
 */
 
 #define COPYRIGHT "Copyright (c) 2000-2018 Simon Kelley"
+#define COPYRIGHT2 "Copyright (c) 2018 Tommaso Latini"
 
 /* We do defines that influence behavior of stdio.h, so complain
    if included too early. */
