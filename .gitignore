@@ -17,10 +17,14 @@ debian/build/
 ## CLION
 .idea/
 cmake-build-debug/
-# Snap
+## Configuration
+dnsmasq.conf
+## Snap
+stage/
 snap/
 parts/
 prime/
 *.snap
+
 
 
