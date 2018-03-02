@@ -17,4 +17,10 @@ debian/build/
 ## CLION
 .idea/
 cmake-build-debug/
+# Snap
+snap/
+parts/
+prime/
+*.snap
+
 

@@ -1,0 +1,34 @@
+name: dnsmasqd
+version: 2.79
+summary: A lightweight DHCP and caching DNS server.  
+description: |
+  dnsmasq is a lightweight DNS, TFTP, PXE, router advertisement 
+  and DHCP server. It is intended to provide coupled DNS and DHCP 
+  service to a LAN.
+grade: stable
+confinement: strict
+
+parts:
+  dnsmasq:
+    plugin: cmake
+    source: ../..
+    configflags:
+      - -DCMAKE_SNAP=1
+      - -DCMAKE_VERBOSE_MAKEFILE=1
+      - -DCMAKE_BUILD_TYPE=Release
+    build-packages:
+      - gcc
+      - cmake
+
+apps:
+  dnsmasqd:
+    daemon: simple
+    command: dnsmasq
+    stop-timeout: 10s
+    restart-condition:
+       always
+    plugs:
+      - network
+      - network-bind
+      - network-control
+
